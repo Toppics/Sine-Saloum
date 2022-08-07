@@ -47,7 +47,7 @@ Note : Most of this methods are just containers.
         # Well,
         logging.warning('Start of DATA plotting !')
 
-    def tiffJPG(self):
+    def tiffPNG(self):
         """Convert .tiff file to .png file using cv2."""
         # Get the latest directory and therefore, the latest .tiff file
         latest = sorted([d for d in os.listdir('.') if os.path.isdir(d)],
@@ -311,7 +311,7 @@ Parameters :
 
     def exeSeq(self):
         """Trigger the execution sequence."""
-        self.tiffJPG()
+        self.tiffPNG()
         self.load()
         self.axes()
         self.listy()
