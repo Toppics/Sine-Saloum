@@ -33,7 +33,7 @@ Note : Most of this methods are just containers.
     """
 
     def __init__(self):
-        """Initialises parents class."""
+        """Initialise parents class."""
         # Initialise the 'parent class'
         VariableGlobal.__init__(self)
         # Check if a .csv file is provide in __main__
@@ -48,7 +48,7 @@ Note : Most of this methods are just containers.
         logging.warning('Start of DATA plotting !')
 
     def tiffJPG(self):
-        """Converts .tiff file to .png file using cv2."""
+        """Convert .tiff file to .png file using cv2."""
         # Get the latest directory and therefore, the latest .tiff file
         latest = sorted([d for d in os.listdir('.') if os.path.isdir(d)],
                         key=lambda x: os.path.getctime(x), reverse=True)[:1]
@@ -81,7 +81,7 @@ Note : Most of this methods are just containers.
                     logging.debug(f'But.. File "{outfile}" already exist !')
 
     def load(self):
-        """Loads Data."""
+        """Load Data."""
         # Load csv
         try:
             dataSrc = self.csvPath
@@ -102,7 +102,7 @@ Note : Most of this methods are just containers.
             exit()
 
     def axes(self):
-        """Creates and set parameter of ax.
+        """Create and set parameters of axes.
 Parameters :
     
     figSize -> Tuple ; default = (32.0, 24.0)
@@ -218,7 +218,7 @@ Parameters :
         self.df.reset_index(inplace=True)
 
     def plot(self):
-        """Plots coordinates and place name.
+        """Plot coordinates and place names.
 
 Parameters :
     
@@ -299,12 +299,12 @@ Parameters :
                             alpha=0.8, color=self.arrowColor, s=10, marker='v')
 
     def show(self):
-        """Plots map in console."""
+        """Plot map in console."""
         self.ax.imshow(self.loadMap, zorder=0,
                        extent=self.BBox, aspect='equal')
 
     def save(self):
-        """Saves file."""
+        """Save file."""
         plt.savefig(f'{self.figTitle}.png', bbox_inches='tight')
         # Print location of the new map
         logging.info(f'Name of file : "{self.workingDirectory}/{self.figTitle}.png"')
