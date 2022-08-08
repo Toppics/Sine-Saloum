@@ -20,7 +20,7 @@ class PlotDATA(KmlCSV):
     """Plots DATA on map using Name, Latitude & Longitude (wgs84) of a DataFrame :
     
 0) __init__() : If not .csv file provide, will create one using .kml file from GoogleEarth.
-1) tiffJPG() : Convert .tiff file from sentinelHubDownload to .png file for using it as a basemap.
+1) tiffPNG() : Convert .tiff file from sentinelHubDownload to .png file for using it as a basemap.
 2) load() : Load map & .csv file.
 3) axes() : Create axes & subplot with BBox, locator & nomenclature.
 4) listy() : Create a 2nd DataFrame and move some rows from the 1st in it.
